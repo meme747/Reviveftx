@@ -15,7 +15,7 @@
 
     body {
       background: linear-gradient(to bottom, #000, #0a0a0a);
-      color: white;
+      color: #d7faff;
       overflow-x: hidden;
       line-height: 1.6;
     }
@@ -36,10 +36,23 @@
     }
 
     .logo {
-      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+    }
+
+    .logo-text {
+      font-size: 1.8rem;
       font-weight: bold;
       color: #00ffcc;
-      text-shadow: 0 0 5px rgba(0, 255, 204, 0.5);
+      text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
     }
 
     .social-links {
@@ -84,7 +97,7 @@
       height: 150px;
       border-radius: 50%;
       margin: 1rem 0;
-      box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+      box-shadow: 0 0 30px rgba(0, 255, 204, 0.7);
     }
 
     .hero h1 {
@@ -93,14 +106,14 @@
       background: linear-gradient(90deg, #00ffcc, #00a3e0);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+      text-shadow: 0 0 30px rgba(0, 255, 204, 0.7);
     }
 
     .hero p {
       font-size: clamp(1rem, 2.5vw, 1.2rem);
       max-width: 800px;
       margin: 0 auto;
-      color: #ddd;
+      color: #bde4ea;
     }
 
     .cta {
@@ -232,7 +245,10 @@
 </head>
 <body>
   <header>
-    <div class="logo">$rFTX</div>
+    <div class="logo">
+      <img src="your-logo-image-path.png" alt="Token Logo">
+      <span class="logo-text">$rFTX</span>
+    </div>
     <div class="social-links">
       <a href="https://x.com/riadh747" target="_blank"><img src="Twitterxlogo.webp" alt="Twitter X" class="social-icon"></a>
       <a href="https://t.me/revive36" target="_blank"><img src="Telegramlogo.png" alt="Telegram" class="social-icon"></a>
@@ -242,7 +258,7 @@
   <main class="hero">
     <img src="Reviveftmlogo.webp" alt="rFTX Logo">
     <h1>Revive FTX - $rFTX</h1>
-    <p>Rebuilding trust, transparency, and growth for a brighter future.</p>
+    <p>Rebuilding trust, transparency, and growth for a brighter future with your community at the center of everything we do.</p>
     <div class="cta"><a href="https://pump.fun/board" target="_blank">Buy $rFTX</a></div>
   </main>
 
