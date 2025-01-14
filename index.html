@@ -14,7 +14,7 @@
     }
 
     body {
-      background: #000; /* Pure black background */
+      background: #000;
       color: white;
       overflow-x: hidden;
     }
@@ -23,30 +23,30 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 3rem;
+      padding: 1.5rem;
       background: rgba(0, 0, 0, 0.9);
       border-bottom: 1px solid #444;
     }
 
-    header .logo {
-      width: 120px;
+    .logo {
+      width: 100px;
     }
 
-    header .social-links {
+    .social-links {
       display: flex;
       gap: 1rem;
     }
 
     .social-icon {
-      width: 32px;
-      height: 32px;
+      width: 24px;
+      height: 24px;
       fill: #fff;
       transition: transform 0.3s, fill 0.3s;
     }
 
     .social-icon:hover {
       transform: scale(1.2);
-      fill: #00ffcc; /* Neon effect on hover */
+      fill: #00ffcc;
     }
 
     .hero {
@@ -56,45 +56,38 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 2rem;
+      padding: 1rem;
     }
 
     .hero img {
-      width: 200px;
-      height: 200px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       box-shadow: 0 0 20px rgba(0, 255, 204, 0.8);
     }
 
     .hero h1 {
-      font-size: 4rem;
+      font-size: 3rem;
       margin: 1rem 0;
       background: linear-gradient(90deg, #00ffcc, #00a3e0);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 20px rgba(0, 255, 204, 0.8);
     }
 
     .hero p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      line-height: 1.8;
-      margin-bottom: 2rem;
+      font-size: 1rem;
+      max-width: 600px;
+      line-height: 1.5;
+      margin: 1rem 0;
       color: #ccc;
-    }
-
-    .cta {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2rem;
     }
 
     .cta a {
       text-decoration: none;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
       font-weight: bold;
-      border-radius: 50px;
+      border-radius: 30px;
       background: linear-gradient(90deg, #00ffcc, #00a3e0);
       color: black;
       transition: transform 0.3s, box-shadow 0.3s;
@@ -102,12 +95,11 @@
 
     .cta a:hover {
       transform: scale(1.1);
-      box-shadow: 0 0 15px rgba(0, 255, 204, 0.8);
+      box-shadow: 0 0 10px rgba(0, 255, 204, 0.8);
     }
 
     .countdown-wrapper {
-      display: inline-block;
-      padding: 1rem 2rem;
+      padding: 1rem;
       border: 2px solid #00ffcc;
       border-radius: 10px;
       background: rgba(0, 0, 0, 0.8);
@@ -116,66 +108,14 @@
     }
 
     .countdown-timer {
-      font-size: 1.5rem;
+      font-size: 1rem;
       color: #00ffcc;
-      text-shadow: 0 0 10px rgba(0, 255, 204, 0.8);
-    }
-
-    .roadmap {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .roadmap h2 {
-      margin-bottom: 3rem;
-      color: #00ffcc;
-      text-shadow: 0 0 10px rgba(0, 255, 204, 0.8);
-    }
-
-    .phase {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 2rem;
-      border-radius: 15px;
-      margin: 2rem 0;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 5px 15px rgba(0, 255, 204, 0.8);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .phase:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(0, 255, 204, 0.8);
-    }
-
-    .phase h3 {
-      color: #00ffcc;
-      margin-bottom: 1rem;
-    }
-
-    .phase ul {
-      list-style-type: none;
-      text-align: left;
-      padding: 0;
-    }
-
-    .phase li {
-      margin: 0.8rem 0;
-      padding-left: 2rem;
-      position: relative;
-      color: #ddd;
-    }
-
-    .phase li::before {
-      content: "🚀";
-      position: absolute;
-      left: 0;
+      text-shadow: 0 0 5px rgba(0, 255, 204, 0.8);
     }
 
     footer {
       background: rgba(0, 0, 0, 0.9);
-      padding: 2rem;
+      padding: 1rem;
       text-align: center;
       color: white;
     }
@@ -183,13 +123,13 @@
     .footer-icons {
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      gap: 1rem;
       margin-bottom: 1rem;
     }
 
     .footer-icon {
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
       fill: white;
       transition: transform 0.3s, fill 0.3s;
     }
@@ -200,8 +140,27 @@
     }
 
     .copyright {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 0.9rem;
+      }
+
+      .cta a {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+      }
+
+      .countdown-timer {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -229,13 +188,11 @@
     <h1>Revive FTX - $rFTX</h1>
     <p>
       The original FTX project faced a dramatic fall from grace, leaving its community in the shadows.<br>
-      Mismanagement and scandal brought its downfall, but the vision and potential it held still resonate deeply with many.<br><br>
       With $rFTX, we aim to:<br>
       ✅ Rebuild trust<br>
       ✅ Foster transparency<br>
       ✅ Focus on community-driven goals<br>
-      ✅ Ensure sustainable growth<br><br>
-      Join us as we rebuild a brighter future for $rFTX!
+      ✅ Ensure sustainable growth
     </p>
     <div class="countdown-wrapper">
       <div id="countdown" class="countdown-timer">Loading...</div>
@@ -245,47 +202,19 @@
     </div>
   </div>
 
-  <div class="roadmap">
-    <h2>Roadmap</h2>
-    <div class="phase">
-      <h3>Phase 1: Relaunch</h3>
-      <ul>
-        <li>Reintroduce $rFTX with transparency</li>
-        <li>Community-building campaigns</li>
-        <li>Listing on Pump.fun</li>
-      </ul>
-    </div>
-    <div class="phase">
-      <h3>Phase 2: Trust Rebuilding</h3>
-      <ul>
-        <li>Partner with leading auditors</li>
-        <li>Introduce a transparency dashboard</li>
-        <li>Host AMAs and community forums</li>
-      </ul>
-    </div>
-    <div class="phase">
-      <h3>Phase 3: Ecosystem Revival</h3>
-      <ul>
-        <li>Launch staking and rewards</li>
-        <li>Develop DeFi partnerships</li>
-        <li>Build a creator hub</li>
-      </ul>
-    </div>
-  </div>
-
   <footer>
     <div class="footer-icons">
       <a href="https://x.com/riadh747" target="_blank">
-        <img src="deployment_assets/twitter_x_logo.webp" alt="Twitter X" class="footer-icon">
+        <img src="twitter_x_logo.webp" alt="Twitter X" class="footer-icon">
       </a>
       <a href="https://t.me/revive36" target="_blank">
-        <img src="deployment_assets/telegram_logo.webp" alt="Telegram" class="footer-icon">
+        <img src="telegram_logo.webp" alt="Telegram" class="footer-icon">
       </a>
       <a href="https://pump.fun/board" target="_blank">
-        <img src="deployment_assets/pump_fun_logo.webp" alt="Pump.fun" class="footer-icon">
+        <img src="pump_fun_logo.webp" alt="Pump.fun" class="footer-icon">
       </a>
       <a href="https://solscan.io/" target="_blank">
-        <img src="deployment_assets/solana_logo.webp" alt="Solana" class="footer-icon">
+        <img src="solana_logo.webp" alt="Solana" class="footer-icon">
       </a>
     </div>
     <p class="copyright">&copy; 2025 Revive FTX. All rights reserved.</p>
@@ -307,7 +236,7 @@
 
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000)) / 1000);
+        const seconds = Math.floor((distance % 1000) / 1000);
 
         countdownEl.textContent = `Time Remaining: ${hours}h ${minutes}m ${seconds}s`;
       }
