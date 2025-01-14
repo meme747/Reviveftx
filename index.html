@@ -51,6 +51,7 @@
       background: rgba(255, 255, 255, 0.1);
       padding: 8px;
       transition: all 0.3s ease;
+      cursor: pointer;
     }
 
     .social-links a:hover {
@@ -217,6 +218,7 @@
       width: 32px;
       height: 32px;
       transition: transform 0.3s;
+      cursor: pointer;
     }
 
     .footer-icon:hover {
@@ -227,42 +229,28 @@
       color: #888;
       font-size: 0.9rem;
     }
-
-    @media (max-width: 768px) {
-      .hero {
-        padding-top: 4rem;
-      }
-      
-      .features-list {
-        padding: 0 1rem;
-      }
-      
-      .phase {
-        margin: 1rem 0;
-      }
-    }
   </style>
 </head>
 <body>
   <header>
     <div class="social-links">
-      <a href="https://x.com/riadh747" target="_blank">
-        <img src="./twitter_x_logo.webp" alt="Twitter X" class="social-icon">
+      <a href="https://x.com/riadh747" target="_blank" aria-label="Twitter">
+        <img src="twitter_x_logo.webp" alt="Twitter X" class="social-icon">
       </a>
-      <a href="https://t.me/revive36" target="_blank">
-        <img src="./telegram_logo.webp" alt="Telegram" class="social-icon">
+      <a href="https://t.me/revive36" target="_blank" aria-label="Telegram">
+        <img src="telegram_logo.webp" alt="Telegram" class="social-icon">
       </a>
-      <a href="https://pump.fun/board" target="_blank">
-        <img src="./pump_fun_logo.webp" alt="Pump.fun" class="social-icon">
+      <a href="https://pump.fun/board" target="_blank" aria-label="Pump.fun">
+        <img src="pump_fun_logo.webp" alt="Pump.fun" class="social-icon">
       </a>
-      <a href="https://solscan.io/" target="_blank">
-        <img src="./solana_logo.webp" alt="Solana" class="social-icon">
+      <a href="https://solscan.io/" target="_blank" aria-label="Solana">
+        <img src="solana_logo.webp" alt="Solana" class="social-icon">
       </a>
     </div>
   </header>
 
   <main class="hero">
-    <img src="./Reviveftmlogo.webp" alt="rFTX Logo">
+    <img src="Reviveftmlogo.webp" alt="rFTX Logo">
     <h1>Revive FTX - $rFTX</h1>
     <p>
       The original FTX project faced a dramatic fall from grace, leaving its community in the shadows.
@@ -315,16 +303,16 @@
 
   <footer>
     <div class="footer-icons">
-      <a href="https://x.com/riadh747" target="_blank">
+      <a href="https://x.com/riadh747" target="_blank" aria-label="Twitter">
         <img src="twitter_x_logo.webp" alt="Twitter X" class="footer-icon">
       </a>
-      <a href="https://t.me/revive36" target="_blank">
+      <a href="https://t.me/revive36" target="_blank" aria-label="Telegram">
         <img src="telegram_logo.webp" alt="Telegram" class="footer-icon">
       </a>
-      <a href="https://pump.fun/board" target="_blank">
+      <a href="https://pump.fun/board" target="_blank" aria-label="Pump.fun">
         <img src="pump_fun_logo.webp" alt="Pump.fun" class="footer-icon">
       </a>
-      <a href="https://solscan.io/" target="_blank">
+      <a href="https://solscan.io/" target="_blank" aria-label="Solana">
         <img src="solana_logo.webp" alt="Solana" class="footer-icon">
       </a>
     </div>
@@ -334,15 +322,14 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const countdownEl = document.getElementById('countdown');
-      // Set deadline to 36 hours from now
       const deadline = new Date(Date.now() + 36 * 60 * 60 * 1000);
 
       function updateCountdown() {
-        const now = new Date().getTime();
+        const now = Date.now();
         const distance = deadline - now;
 
         if (distance < 0) {
-          countdownEl.innerHTML = "Time's Up!";
+          countdownEl.textContent = "Time's Up!";
           return;
         }
 
@@ -350,7 +337,7 @@
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        countdownEl.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+        countdownEl.textContent = `${hours}h ${minutes}m ${seconds}s`;
       }
 
       updateCountdown();
