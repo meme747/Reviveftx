@@ -14,7 +14,7 @@
     }
 
     body {
-      background: #000;
+      background: linear-gradient(to bottom, #000, #0a0a0a);
       color: white;
       overflow-x: hidden;
       line-height: 1.6;
@@ -27,18 +27,24 @@
       right: 0;
       z-index: 1000;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       align-items: center;
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.95);
+      padding: 1rem 2rem;
+      background: rgba(0, 0, 0, 0.9);
       border-bottom: 1px solid #444;
       backdrop-filter: blur(10px);
     }
 
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00ffcc;
+      text-shadow: 0 0 5px rgba(0, 255, 204, 0.5);
+    }
+
     .social-links {
       display: flex;
-      gap: 1.5rem;
-      padding-right: 1rem;
+      gap: 1rem;
     }
 
     .social-links a {
@@ -49,9 +55,7 @@
       height: 40px;
       border-radius: 8px;
       background: rgba(255, 255, 255, 0.1);
-      padding: 8px;
       transition: all 0.3s ease;
-      cursor: pointer;
     }
 
     .social-links a:hover {
@@ -60,9 +64,8 @@
     }
 
     .social-icon {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+      width: 24px;
+      height: 24px;
     }
 
     .hero {
@@ -72,7 +75,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 1rem;
+      padding: 2rem;
       margin-top: 60px;
     }
 
@@ -85,7 +88,7 @@
     }
 
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 4rem);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
       margin: 1rem 0;
       background: linear-gradient(90deg, #00ffcc, #00a3e0);
       -webkit-background-clip: text;
@@ -97,48 +100,18 @@
       font-size: clamp(1rem, 2.5vw, 1.2rem);
       max-width: 800px;
       margin: 0 auto;
-      padding: 0 1rem;
-      color: #ccc;
-    }
-
-    .features-list {
-      text-align: left;
-      margin: 2rem auto;
-      max-width: 600px;
-      padding: 0 2rem;
-    }
-
-    .features-list li {
-      margin: 1rem 0;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .countdown-wrapper {
-      background: rgba(0, 0, 0, 0.8);
-      border: 2px solid #00ffcc;
-      border-radius: 10px;
-      padding: 1rem 2rem;
-      margin: 2rem 0;
-      box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
-    }
-
-    .countdown-timer {
-      font-size: clamp(1rem, 3vw, 1.5rem);
-      color: #00ffcc;
-      font-weight: bold;
+      color: #ddd;
     }
 
     .cta {
-      margin: 2rem 0;
+      margin-top: 2rem;
     }
 
     .cta a {
       display: inline-block;
       text-decoration: none;
       padding: 1rem 2rem;
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-size: 1.2rem;
       font-weight: bold;
       border-radius: 50px;
       background: linear-gradient(90deg, #00ffcc, #00a3e0);
@@ -151,7 +124,7 @@
     }
 
     .roadmap {
-      padding: 4rem 1rem;
+      padding: 4rem 2rem;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -159,27 +132,54 @@
     .roadmap h2 {
       text-align: center;
       color: #00ffcc;
-      font-size: clamp(1.5rem, 4vw, 2.5rem);
-      margin-bottom: 3rem;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 2rem;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .tab {
+      padding: 1rem 2rem;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid #00ffcc;
+      border-radius: 20px;
+      margin: 0 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .tab.active {
+      background: linear-gradient(90deg, #00ffcc, #00a3e0);
+      color: black;
+      font-weight: bold;
+    }
+
+    .tab:hover {
+      transform: translateY(-2px);
     }
 
     .phase {
+      display: none;
+      text-align: left;
       background: rgba(255, 255, 255, 0.05);
       padding: 1.5rem;
       border-radius: 15px;
       margin: 1.5rem 0;
       backdrop-filter: blur(10px);
-      transition: transform 0.3s;
     }
 
-    .phase:hover {
-      transform: translateY(-5px);
+    .phase.active {
+      display: block;
     }
 
     .phase h3 {
       color: #00ffcc;
       margin-bottom: 1rem;
-      font-size: clamp(1.2rem, 3vw, 1.5rem);
+      font-size: 1.5rem;
     }
 
     .phase ul {
@@ -218,7 +218,6 @@
       width: 32px;
       height: 32px;
       transition: transform 0.3s;
-      cursor: pointer;
     }
 
     .footer-icon:hover {
@@ -233,49 +232,28 @@
 </head>
 <body>
   <header>
+    <div class="logo">$rFTX</div>
     <div class="social-links">
-      <a href="https://x.com/riadh747" target="_blank" aria-label="Twitter">
-        <img src="Twitterxlogo.webp" alt="Twitter X" class="social-icon">
-      </a>
-      <a href="https://t.me/revive36" target="_blank" aria-label="Telegram">
-        <img src="Telegramlogo.png" alt="Telegram" class="social-icon">
-      </a>
-      <a href="https://pump.fun/board" target="_blank" aria-label="Pump.fun">
-        <img src="logopump.webp" alt="Pump.fun" class="social-icon">
-      </a>
-      <a href="https://solscan.io/" target="_blank" aria-label="Solana">
-        <img src="solana-sol-logo.png" alt="Solana" class="social-icon">
-      </a>
+      <a href="https://x.com/riadh747" target="_blank"><img src="Twitterxlogo.webp" alt="Twitter X" class="social-icon"></a>
+      <a href="https://t.me/revive36" target="_blank"><img src="Telegramlogo.png" alt="Telegram" class="social-icon"></a>
     </div>
   </header>
 
   <main class="hero">
     <img src="Reviveftmlogo.webp" alt="rFTX Logo">
     <h1>Revive FTX - $rFTX</h1>
-    <p>
-      The original FTX project faced a dramatic fall from grace, leaving its community in the shadows.
-      Mismanagement and scandal brought its downfall, but the vision and potential it held still resonate deeply with many.
-    </p>
-    
-    <ul class="features-list">
-      <li>✅ Rebuild trust in the ecosystem</li>
-      <li>✅ Foster complete transparency</li>
-      <li>✅ Focus on community-driven goals</li>
-      <li>✅ Ensure sustainable growth</li>
-    </ul>
-
-    <div class="countdown-wrapper">
-      <div id="countdown" class="countdown-timer">Loading...</div>
-    </div>
-    
-    <div class="cta">
-      <a href="https://pump.fun/board" target="_blank">Buy $rFTX</a>
-    </div>
+    <p>Rebuilding trust, transparency, and growth for a brighter future.</p>
+    <div class="cta"><a href="https://pump.fun/board" target="_blank">Buy $rFTX</a></div>
   </main>
 
   <section class="roadmap">
     <h2>Roadmap</h2>
-    <div class="phase">
+    <div class="tabs">
+      <div class="tab active" data-phase="phase1">Phase 1</div>
+      <div class="tab" data-phase="phase2">Phase 2</div>
+      <div class="tab" data-phase="phase3">Phase 3</div>
+    </div>
+    <div id="phase1" class="phase active">
       <h3>Phase 1: Relaunch</h3>
       <ul>
         <li>Reintroduce $rFTX with transparency</li>
@@ -283,7 +261,7 @@
         <li>Listing on Pump.fun</li>
       </ul>
     </div>
-    <div class="phase">
+    <div id="phase2" class="phase">
       <h3>Phase 2: Trust Rebuilding</h3>
       <ul>
         <li>Partner with leading auditors</li>
@@ -291,7 +269,7 @@
         <li>Host AMAs and community forums</li>
       </ul>
     </div>
-    <div class="phase">
+    <div id="phase3" class="phase">
       <h3>Phase 3: Ecosystem Revival</h3>
       <ul>
         <li>Launch staking and rewards</li>
@@ -303,45 +281,26 @@
 
   <footer>
     <div class="footer-icons">
-      <a href="https://x.com/riadh747" target="_blank" aria-label="Twitter">
-        <img src="Twitterxlogo.webp" alt="Twitter X" class="footer-icon">
-      </a>
-      <a href="https://t.me/revive36" target="_blank" aria-label="Telegram">
-        <img src="Telegramlogo.png" alt="Telegram" class="footer-icon">
-      </a>
-      <a href="https://pump.fun/board" target="_blank" aria-label="Pump.fun">
-        <img src="logopump.webp" alt="Pump.fun" class="footer-icon">
-      </a>
-      <a href="https://solscan.io/" target="_blank" aria-label="Solana">
-        <img src="solana-sol-logo.png" alt="Solana" class="footer-icon">
-      </a>
+      <a href="https://x.com/riadh747" target="_blank"><img src="Twitterxlogo.webp" alt="Twitter X" class="footer-icon"></a>
+      <a href="https://t.me/revive36" target="_blank"><img src="Telegramlogo.png" alt="Telegram" class="footer-icon"></a>
     </div>
     <p class="copyright">&copy; 2025 Revive FTX. All rights reserved.</p>
   </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const countdownEl = document.getElementById('countdown');
-      const deadline = new Date(Date.now() + 36 * 60 * 60 * 1000);
+      const tabs = document.querySelectorAll('.tab');
+      const phases = document.querySelectorAll('.phase');
 
-      function updateCountdown() {
-        const now = Date.now();
-        const distance = deadline - now;
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          phases.forEach(p => p.classList.remove('active'));
 
-        if (distance < 0) {
-          countdownEl.textContent = "Time's Up!";
-          return;
-        }
-
-        const hours = Math.floor(distance / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        countdownEl.textContent = `${hours}h ${minutes}m ${seconds}s`;
-      }
-
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
+          tab.classList.add('active');
+          document.getElementById(tab.dataset.phase).classList.add('active');
+        });
+      });
     });
   </script>
 </body>
