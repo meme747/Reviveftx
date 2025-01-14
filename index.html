@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>$rFTX - Revive FTX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* General Styles */
     * {
       margin: 0;
       padding: 0;
@@ -17,36 +17,42 @@
       background: #000;
       color: white;
       overflow-x: hidden;
+      line-height: 1.6;
     }
 
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem;
-      background: rgba(0, 0, 0, 0.9);
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.95);
       border-bottom: 1px solid #444;
+      backdrop-filter: blur(10px);
     }
 
     .logo {
       width: 100px;
+      height: auto;
     }
 
     .social-links {
       display: flex;
-      gap: 1rem;
+      gap: 0.8rem;
     }
 
     .social-icon {
-      width: 24px;
-      height: 24px;
-      fill: #fff;
-      transition: transform 0.3s, fill 0.3s;
+      width: 28px;
+      height: 28px;
+      transition: transform 0.3s;
     }
 
     .social-icon:hover {
       transform: scale(1.2);
-      fill: #00ffcc;
     }
 
     .hero {
@@ -57,109 +63,173 @@
       justify-content: center;
       text-align: center;
       padding: 1rem;
+      margin-top: 60px;
     }
 
     .hero img {
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      box-shadow: 0 0 20px rgba(0, 255, 204, 0.8);
+      margin: 1rem 0;
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: clamp(2rem, 5vw, 4rem);
       margin: 1rem 0;
       background: linear-gradient(90deg, #00ffcc, #00a3e0);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
     }
 
     .hero p {
-      font-size: 1rem;
-      max-width: 600px;
-      line-height: 1.5;
-      margin: 1rem 0;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1rem;
       color: #ccc;
     }
 
-    .cta a {
-      text-decoration: none;
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
-      font-weight: bold;
-      border-radius: 30px;
-      background: linear-gradient(90deg, #00ffcc, #00a3e0);
-      color: black;
-      transition: transform 0.3s, box-shadow 0.3s;
+    .features-list {
+      text-align: left;
+      margin: 2rem auto;
+      max-width: 600px;
+      padding: 0 2rem;
     }
 
-    .cta a:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 10px rgba(0, 255, 204, 0.8);
+    .features-list li {
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .countdown-wrapper {
-      padding: 1rem;
+      background: rgba(0, 0, 0, 0.8);
       border: 2px solid #00ffcc;
       border-radius: 10px;
-      background: rgba(0, 0, 0, 0.8);
-      box-shadow: 0 0 15px rgba(0, 255, 204, 0.8);
-      margin: 1rem 0;
+      padding: 1rem 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
     }
 
     .countdown-timer {
-      font-size: 1rem;
+      font-size: clamp(1rem, 3vw, 1.5rem);
       color: #00ffcc;
-      text-shadow: 0 0 5px rgba(0, 255, 204, 0.8);
+      font-weight: bold;
+    }
+
+    .cta {
+      margin: 2rem 0;
+    }
+
+    .cta a {
+      display: inline-block;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-weight: bold;
+      border-radius: 50px;
+      background: linear-gradient(90deg, #00ffcc, #00a3e0);
+      color: black;
+      transition: transform 0.3s;
+    }
+
+    .cta a:hover {
+      transform: scale(1.05);
+    }
+
+    .roadmap {
+      padding: 4rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .roadmap h2 {
+      text-align: center;
+      color: #00ffcc;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      margin-bottom: 3rem;
+    }
+
+    .phase {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 15px;
+      margin: 1.5rem 0;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s;
+    }
+
+    .phase:hover {
+      transform: translateY(-5px);
+    }
+
+    .phase h3 {
+      color: #00ffcc;
+      margin-bottom: 1rem;
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+    }
+
+    .phase ul {
+      list-style: none;
+      padding-left: 1.5rem;
+    }
+
+    .phase li {
+      margin: 0.8rem 0;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .phase li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #00ffcc;
     }
 
     footer {
-      background: rgba(0, 0, 0, 0.9);
-      padding: 1rem;
+      background: rgba(0, 0, 0, 0.95);
+      padding: 2rem 1rem;
       text-align: center;
-      color: white;
+      border-top: 1px solid #444;
     }
 
     .footer-icons {
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
     .footer-icon {
-      width: 30px;
-      height: 30px;
-      fill: white;
-      transition: transform 0.3s, fill 0.3s;
+      width: 32px;
+      height: 32px;
+      transition: transform 0.3s;
     }
 
     .footer-icon:hover {
       transform: scale(1.2);
-      fill: #00ffcc;
     }
 
     .copyright {
-      font-size: 0.8rem;
-      color: #aaa;
+      color: #888;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
+      .hero {
+        padding-top: 4rem;
       }
-
-      .hero p {
-        font-size: 0.9rem;
+      
+      .features-list {
+        padding: 0 1rem;
       }
-
-      .cta a {
-        font-size: 0.9rem;
-        padding: 0.6rem 1rem;
-      }
-
-      .countdown-timer {
-        font-size: 0.9rem;
+      
+      .phase {
+        margin: 1rem 0;
       }
     }
   </style>
@@ -183,24 +253,57 @@
     </div>
   </header>
 
-  <div class="hero">
+  <main class="hero">
     <img src="Reviveftmlogo.webp" alt="rFTX Logo">
     <h1>Revive FTX - $rFTX</h1>
     <p>
-      The original FTX project faced a dramatic fall from grace, leaving its community in the shadows.<br>
-      With $rFTX, we aim to:<br>
-      ✅ Rebuild trust<br>
-      ✅ Foster transparency<br>
-      ✅ Focus on community-driven goals<br>
-      ✅ Ensure sustainable growth
+      The original FTX project faced a dramatic fall from grace, leaving its community in the shadows.
+      Mismanagement and scandal brought its downfall, but the vision and potential it held still resonate deeply with many.
     </p>
+    
+    <ul class="features-list">
+      <li>✅ Rebuild trust in the ecosystem</li>
+      <li>✅ Foster complete transparency</li>
+      <li>✅ Focus on community-driven goals</li>
+      <li>✅ Ensure sustainable growth</li>
+    </ul>
+
     <div class="countdown-wrapper">
       <div id="countdown" class="countdown-timer">Loading...</div>
     </div>
+    
     <div class="cta">
       <a href="https://pump.fun/board" target="_blank">Buy $rFTX</a>
     </div>
-  </div>
+  </main>
+
+  <section class="roadmap">
+    <h2>Roadmap</h2>
+    <div class="phase">
+      <h3>Phase 1: Relaunch</h3>
+      <ul>
+        <li>Reintroduce $rFTX with transparency</li>
+        <li>Community-building campaigns</li>
+        <li>Listing on Pump.fun</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <h3>Phase 2: Trust Rebuilding</h3>
+      <ul>
+        <li>Partner with leading auditors</li>
+        <li>Introduce a transparency dashboard</li>
+        <li>Host AMAs and community forums</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <h3>Phase 3: Ecosystem Revival</h3>
+      <ul>
+        <li>Launch staking and rewards</li>
+        <li>Develop DeFi partnerships</li>
+        <li>Build a creator hub</li>
+      </ul>
+    </div>
+  </section>
 
   <footer>
     <div class="footer-icons">
@@ -223,22 +326,23 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const countdownEl = document.getElementById('countdown');
-      const deadline = new Date().getTime() + 36 * 60 * 60 * 1000;
+      // Set deadline to 36 hours from now
+      const deadline = new Date(Date.now() + 36 * 60 * 60 * 1000);
 
       function updateCountdown() {
         const now = new Date().getTime();
         const distance = deadline - now;
 
         if (distance < 0) {
-          countdownEl.textContent = "Time Over!";
+          countdownEl.innerHTML = "Time's Up!";
           return;
         }
 
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % 1000) / 1000);
+        const hours = Math.floor(distance / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        countdownEl.textContent = `Time Remaining: ${hours}h ${minutes}m ${seconds}s`;
+        countdownEl.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
       }
 
       updateCountdown();
